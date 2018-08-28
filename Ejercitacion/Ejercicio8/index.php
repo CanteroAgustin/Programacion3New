@@ -1,9 +1,9 @@
 <?php
     
-    $num=25;
+    $num=22;
     
     $numEnLetras = convertir($num);
-    var_dump($numEnLetras);
+    echo("<h2>".$numEnLetras."</h2>");
 
     function convertir($num){
         $unidad = $num % 10;
@@ -17,8 +17,10 @@
             }else if($decena == 2){
                 return "veinti".$uLetras;
             }else{
-                return $dLetras.$uLetras;
+                return $dLetras." y ".$uLetras;
             }
+        }else{
+            return "Numero fuera de rango";
         }
         
     }
@@ -74,7 +76,3 @@
         }   
     }
 ?>
-Aplicación Nº 8 (Números en letras)
-Realizar un programa que en base al valor numérico de la variable $num, 
-pueda mostrarse por pantalla, el nombre del número que tenga dentro escrito con palabras, 
-para los números entre el 20 y el 60.
