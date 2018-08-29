@@ -1,4 +1,8 @@
 <?php
+echo "<h2>Aplicación Nº 7 (Mostrar fecha y estación)</h2>";
+echo "<h4>Obtenga la fecha actual del servidor (función date) y luego imprímala dentro de la página con distintos formatos (seleccione los formatos que más le guste). Además indicar que estación del año es. Utilizar una estructura selectiva múltiple.</h4>";
+echo "<h4>Programa:</h4>";
+
 date_default_timezone_set("America/Argentina/Buenos_Aires");
 
 echo "Hoy es " . date("Y/m/d") . "<br>";

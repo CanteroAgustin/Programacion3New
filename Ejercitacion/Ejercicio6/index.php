@@ -1,5 +1,9 @@
 <?php
 
+echo "<h2>Aplicación Nº 6 (Calculadora)</h2>";
+echo "<h4>Escribir un programa que use la variable &#36;operador que pueda almacenar los símbolos matemáticos: ‘+’, ‘-’, ‘/’ y ‘*’; y definir dos variables enteras &#36;op1 y &#36;op2. De acuerdo al símbolo que tenga la variable &#36;operador, deberá realizarse la operación indicada y mostrarse el resultado por pantalla.</h4>";
+echo "<h4>Programa:</h4>";
+
 echo "Suma: ";
 $op1 = 2;
 $op2 = 3;

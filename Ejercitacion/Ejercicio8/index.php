@@ -1,5 +1,9 @@
 <?php
     
+    echo "<h2>Aplicación Nº 8 (Números en letras)</h2>";
+    echo "<h4>Realizar un programa que en base al valor numérico de la variable &#36;num, pueda mostrarse por pantalla, el nombre del número que tenga dentro escrito con palabras, para los números entre el 20 y el 60.</h4>";
+    echo "<h4>Programa:</h4>";
+
     $num=22;
     
     $numEnLetras = convertir($num);
