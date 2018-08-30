@@ -18,7 +18,7 @@ array_push($array2,"1986","1996","2015","78","86");
 array_push($array3,"php","mysql","html5","typescript","ajax");
 
 $arrayMerged = array_merge($array1,$array2,$array3);
-echo "Array resultante:";
+echo "Array resultante: ";
 foreach ($arrayMerged as $value) {
     echo $value." - ";
 }
