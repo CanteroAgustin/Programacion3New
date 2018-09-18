@@ -1,0 +1,13 @@
+INSERT INTO provedores('numero', 'nombre', 'domicilio', 'localidad') VALUES (100,'Perez','Peron 876','Quilmes');
+INSERT INTO provedores('numero', 'nombre', 'domicilio', 'localidad') VALUES (101,'Gimenez','Mitre 750','Avellaneda');
+INSERT INTO provedores('numero', 'nombre', 'domicilio', 'localidad') VALUES (102,'Aguirre','Boedo 634','Bernal');
+INSERT INTO productos('nombre', 'precio', 'tamaño') VALUES ('Caramelos',1,5,'Chico');
+INSERT INTO productos('nombre', 'precio', 'tamaño') VALUES ('Cigarrillos',45,89,'Mediano');
+INSERT INTO productos('nombre', 'precio', 'tamaño') VALUES ('Gaseosa',15,80,'Grande');
+INSERT INTO envios('numero', 'pnumero', 'cantidad') VALUES (100,1,500);
+INSERT INTO envios('numero', 'pnumero', 'cantidad') VALUES (100,2,1500);
+INSERT INTO envios('numero', 'pnumero', 'cantidad') VALUES (100,3,100);
+INSERT INTO envios('numero', 'pnumero', 'cantidad') VALUES (101,2,55);
+INSERT INTO envios('numero', 'pnumero', 'cantidad') VALUES (101,3,225);
+INSERT INTO envios('numero', 'pnumero', 'cantidad') VALUES (102,1,600);
+INSERT INTO envios('numero', 'pnumero', 'cantidad') VALUES (102,3,300);
