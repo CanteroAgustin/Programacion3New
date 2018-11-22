@@ -16,7 +16,7 @@
 
   $app = new \Slim\App(["settings" => $config]);
   
-  $app->post('/login', \Login::class . ':loguear');
+  $app->post('/login', \Login::class . ':loguear')->add(MWparaCORS::class . ':HabilitarCORSTodos')->add(MWparaCORS::class . ':HabilitarCORS8080');
 
   $app->group('/empleados', function () {
     
@@ -26,11 +26,11 @@
     
     $this->post('[/]', \EmpleadoApi::class . ':CargarUno');
     
-    $this->delete('/', \EmpleadoApi::class . ':BorrarUno');
+    $this->delete('[/]', \EmpleadoApi::class . ':BorrarUno');
     
     $this->put('/', \EmpleadoApi::class . ':ModificarUno');
         
-  })->add(MWparaAutentificar::class . ':VerificarUsuario')->add(\MWparaCORS::class . ':HabilitarCORS8080');
+  })->add(MWparaAutentificar::class . ':VerificarUsuario')->add(MWparaCORS::class . ':HabilitarCORS8080');
 
 $app->run();
 ?>

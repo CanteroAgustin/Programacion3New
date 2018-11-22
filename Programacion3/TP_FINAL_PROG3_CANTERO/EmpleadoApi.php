@@ -23,11 +23,15 @@ class EmpleadoApi extends Empleado implements IApiUsable
         $apellido= $ArrayDeParametros['apellido'];
         $puesto= $ArrayDeParametros['puesto'];
         $suspendido= $ArrayDeParametros['suspendido'];
+        $email = $ArrayDeParametros['email'];
+        $password = $ArrayDeParametros['password'];
         $empleado = new Empleado();
         $empleado->setNombre($nombre);
         $empleado->setApellido($apellido);
         $empleado->setPuesto($puesto);
         $empleado->setSuspendido($suspendido);
+        $empleado->setEmail($email);
+        $empleado->setPassword($password);
         $empleado->InsertarElEmpleado();
         
         $response->getBody()->write("se guardo el empleado");
@@ -65,15 +69,17 @@ class EmpleadoApi extends Empleado implements IApiUsable
 		$apellido = $ArrayDeParametros['apellido'];
 		$puesto = $ArrayDeParametros['puesto'];
 		$suspendido = $ArrayDeParametros['suspendido'];
+		$email = $ArrayDeParametros['email'];
+		$password = $ArrayDeParametros['password'];
 
 		$empleado = new Empleado();
-		if($nombre != "" || $nombre != null){
-			$empleado->setNombre($nombre);
-		}
-        
-        $empleado->setApellido($apellido);
+			
+		$empleado->setNombre($nombre);
+		$empleado->setApellido($apellido);
         $empleado->setPuesto($puesto);
 		$empleado->setSuspendido($suspendido);
+		$empleado->setEmail($email);
+		$empleado->setPassword($password);
 	   	$resultado = $empleado->ModificarEmpleado($id);
 	   	$objDelaRespuesta= new stdclass();
 		$objDelaRespuesta->resultado=$resultado;

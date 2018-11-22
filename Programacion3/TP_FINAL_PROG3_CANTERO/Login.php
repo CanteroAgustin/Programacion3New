@@ -11,18 +11,30 @@ class Login
         
         if($request->isPost())
 		{
-            $nombre=$args['nombre'];
-            $apellido = $args['apellido'];
-        	$empleado=Empleado::TraerPorNombreYApellido($nombre, $apellido);
+		    $array = $request->getParsedBody();
+            $email = $array['email'];
+            $password = $array['password'];
+        	$empleado=Empleado::TraerPorEmail($email);
 		    $objDelaRespuesta= new stdclass();
 		    $objDelaRespuesta->respuesta="";
-	   
-		
-		    $datos = array('usuario' => $empleado->nombre,'puesto' => $empleado->apellido);
-		    $token= AutentificadorJWT::CrearToken($datos);
-		    $response->getBody()->write('<p>'.$token.'</p>');
-		    $objDelaRespuesta->elToken=$token;
-		    
+	        
+	       if($empleado != null){
+	           if($empleado->password === $password){
+	               $datos = array('email' => $email);
+    		       $token= AutentificadorJWT::CrearToken($datos);
+    		       $response->getBody()->write($token);
+    		       $objDelaRespuesta->token=$token;
+	           }else{
+	               $objDelaRespuesta->error="Contraseña incorrecta.";
+	               $nueva=$response->withJson($objDelaRespuesta, 401);  
+			       return $nueva;
+	           }
+	           
+	       }else{
+	           $objDelaRespuesta->error="El email ingresado no esta registrado";
+	           $nueva=$response->withJson($objDelaRespuesta, 401);  
+			   return $nueva;
+	       }
 		}
 		
 		if($objDelaRespuesta->respuesta!="")
